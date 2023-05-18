@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-name">
+          <h2>Newbie Plan</h2>
+        </div>
+        <div class="nav-list-group">
+          <ul>
+            <li><a href="/write">Write</a></li>
+            <li><a href="/list">List</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="write-container">
+      <form action="/list" method="POST" class="write-form">
+        <div class="task-input input-box">
+          <label for="task"><h4>할 일</h4></label>
+          <input
+            required
+            type="text"
+            class="task"
+            name="task"
+            placeholder="할 일을 기입해주세요"
+          />
+        </div>
+        <div class="date-input input-box">
+          <label for="date"><h4>비고</h4></label>
+          <input
+            required
+            placeholder="세부사항을 적어주세요"
+            type="text"
+            class="date"
+            name="date"
+          />
+        </div>
+        <div class="importance-input input-box">
+          <label for="importance"><h4>중요도</h4></label>
+          <select name="importance" id="importance">
+            <option value="normal">보통</option>
+            <option value="important">중요</option>
+            <option value="very-important">매우 중요</option>
+          </select>
+        </div>
+        <button type="submit">추가</button>
+      </form>
+    </main>
+  </body>
+</html>

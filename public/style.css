@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #eee;
+  padding: 1rem 3rem;
+}
+
+.nav-name {
+  width: 250px;
+}
+
+.nav-list-group {
+  width: 150px;
+}
+
+.nav-list-group ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ###### MAIN FORM ####### */
+.write-container {
+  width: 100%;
+  padding: 3rem 6rem;
+}
+
+.write-container input {
+  display: block;
+  padding: 0.3rem 0.3rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.write-form {
+  display: grid;
+  row-gap: 1rem;
+  width: 100%;
+}
+
+.input-box {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.write-form button {
+  width: 150px;
+  padding: 1rem 3rem;
+  outline: none;
+  border: none;
+  background-color: #056444;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* List Page */
+.list-container {
+  width: 100%;
+  display: grid;
+  row-gap: 0.5rem;
+  padding: 2.5rem;
+}
+
+.list-card {
+  background-color: #f0f0f0;
+  padding: 1.5rem 3rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-info {
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.card-info span {
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.card-button {
+  padding: 0.6rem 1.2rem;
+  background: rgb(2, 110, 65);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ####### RESPONSIVE ####### */
+@media (max-width:768px) {
+  .input-box {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

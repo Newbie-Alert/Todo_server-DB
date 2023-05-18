@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-name">
+          <h2>Newbie Plan</h2>
+        </div>
+        <div class="nav-list-group">
+          <ul>
+            <li><a href="/write">Write</a></li>
+            <li><a href="/list">List</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="list-container">
+      <% for(let i=0; i<tasks.length; i++) { %>
+        <div class="list-card <%=tasks[i].importance%>">
+          <div class="card-info">
+            <h3>할 일: <span><%=tasks[i].name%></span></h3>
+            <p>기한: <%=tasks[i].date%></p>
+          </div>
+          <div class="card-check">
+            <button class="card-button" data-id="<%= tasks[i]._id%>">완료</button>
+          </div>
+        </div>
+      <% } %>
+      
+    </main>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      const card = document.querySelectorAll('.list-card');
+      card.forEach(el=>{
+        el.classList.contains('important') ? 
+        el.style.boxShadow = "6px 0 0 0 #4E93E7 inset" : el.style.boxShadow = "6px 0 0 0 #83D529 inset";
+        el.classList.contains('very-important') ?
+        el.style.boxShadow = "6px 0 0 0 #EC405A inset": null
+      })
+        // delete 
+        $('.card-button').click(function(e){
+          let clicked = e.target.dataset.id;
+          let parent = $(this).parent('div').parent('div')
+          $.ajax({
+            method:'DELETE',
+            url: '/delete',
+            data: {_id: clicked}
+          }).done(function(res){
+            parent.fadeOut('1s');
+          })
+        })
+    </script>
+  </body>
+</html>
